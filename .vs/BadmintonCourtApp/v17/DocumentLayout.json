@@ -1,0 +1,394 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|c:\\users\\caotr\\source\\repos\\badmintoncourtapp\\badmintoncourtapp\\customerhomescreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\customerhomescreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\customerhomescreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\customerhomescreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\courtdetailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\courtdetailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\courtdetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\courtdetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\badmintoncourtapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\badmintoncourtapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\repository\\repository\\courtrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\courtrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\repository\\models\\badmintoncourt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|solutionrelative:repository\\models\\badmintoncourt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\repository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\repository\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\repository\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5384D561-1293-4ABE-851C-3E9B7136AA6A}|Repository\\Repository.csproj|solutionrelative:repository\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\forgotpasswordwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\forgotpasswordwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\forgotpasswordwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\forgotpasswordwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\registerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\registerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\appsetting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\appsetting.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\appsetting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\appsetting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\profileform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\profileform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\badmintoncourtapp\\profileform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F56D40D-8FFA-4C4E-A2E3-CCC47C30395A}|BadmintonCourtApp\\BadmintonCourtApp.csproj|solutionrelative:badmintoncourtapp\\profileform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CourtDetailWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CourtDetailWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\CourtDetailWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CourtDetailWindow.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\CourtDetailWindow.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACwAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T15:50:52.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CourtDetailWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CourtDetailWindow.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\CourtDetailWindow.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CourtDetailWindow.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\CourtDetailWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-24T15:50:21.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerHomeScreen.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CustomerHomeScreen.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\CustomerHomeScreen.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CustomerHomeScreen.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\CustomerHomeScreen.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T09:21:12.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerHomeScreen.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CustomerHomeScreen.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\CustomerHomeScreen.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\CustomerHomeScreen.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\CustomerHomeScreen.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-23T07:04:39.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BadmintonCourtApp",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\BadmintonCourtApp.csproj",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj",
+              "RelativeToolTip": "BadmintonCourtApp\\BadmintonCourtApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-24T02:14:23.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\App.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\App.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\App.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T09:47:03.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\MainWindow.xaml.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwC4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T03:05:05.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\App.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\App.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\App.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-23T08:42:51.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourtRepository.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\repository\\CourtRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\repository\\CourtRepository.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\repository\\CourtRepository.cs",
+              "RelativeToolTip": "Repository\\repository\\CourtRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T09:07:46.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BadmintonCourt.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Models\\BadmintonCourt.cs",
+              "RelativeDocumentMoniker": "Repository\\Models\\BadmintonCourt.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Models\\BadmintonCourt.cs",
+              "RelativeToolTip": "Repository\\Models\\BadmintonCourt.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T09:43:39.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\repository\\UserRepository.cs",
+              "RelativeToolTip": "Repository\\repository\\UserRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:35:45.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\repository\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\repository\\BaseRepository.cs",
+              "RelativeToolTip": "Repository\\repository\\BaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T00:48:30.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "registerWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\registerWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\registerWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\registerWindow.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\registerWindow.xaml.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwEgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T02:48:39.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Repository\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Models\\User.cs",
+              "RelativeToolTip": "Repository\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T08:25:15.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "forgotPasswordWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\forgotPasswordWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\forgotPasswordWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\forgotPasswordWindow.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\forgotPasswordWindow.xaml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAMwCMAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T04:45:08.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\MainWindow.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-24T08:13:55.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "registerWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\registerWindow.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\registerWindow.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\registerWindow.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\registerWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-24T02:14:41.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "forgotPasswordWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\forgotPasswordWindow.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\forgotPasswordWindow.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\forgotPasswordWindow.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\forgotPasswordWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-24T02:31:41.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsetting.json",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\appsetting.json",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\appsetting.json",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\appsetting.json",
+              "RelativeToolTip": "BadmintonCourtApp\\appsetting.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-24T04:24:58.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsetting.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\appsetting.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\appsetting.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\appsetting.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\appsetting.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T04:32:20.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\AssemblyInfo.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T04:32:22.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "profileForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\profileForm.xaml.cs",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\profileForm.xaml.cs",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\profileForm.xaml.cs",
+              "RelativeToolTip": "BadmintonCourtApp\\profileForm.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T01:50:25.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "profileForm.xaml",
+              "DocumentMoniker": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\profileForm.xaml",
+              "RelativeDocumentMoniker": "BadmintonCourtApp\\profileForm.xaml",
+              "ToolTip": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\profileForm.xaml",
+              "RelativeToolTip": "BadmintonCourtApp\\profileForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-23T09:15:00.956Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
