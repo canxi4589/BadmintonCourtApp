@@ -71,7 +71,7 @@ namespace BadmintonCourtApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BadmintonCourtApp;V1.0.0.0;component/forgotpasswordwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BadmintonCourtApp;component/forgotpasswordwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\forgotPasswordWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

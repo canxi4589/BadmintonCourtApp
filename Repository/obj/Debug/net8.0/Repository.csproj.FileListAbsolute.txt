@@ -10,3 +10,4 @@ C:\Users\caotr\source\repos\BadmintonCourtApp\Repository\obj\Debug\net8.0\Reposi
 C:\Users\caotr\source\repos\BadmintonCourtApp\Repository\obj\Debug\net8.0\refint\Repository.dll
 C:\Users\caotr\source\repos\BadmintonCourtApp\Repository\obj\Debug\net8.0\Repository.pdb
 C:\Users\caotr\source\repos\BadmintonCourtApp\Repository\obj\Debug\net8.0\ref\Repository.dll
+C:\Users\caotr\source\repos\BadmintonCourtApp\Repository\obj\Debug\net8.0\Repository.sourcelink.json
