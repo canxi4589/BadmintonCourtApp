@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Profile" Height="400" Width="600">
+        Title="Profile" Height="632" Width="600">
     <Grid>
         <materialDesign:Card Margin="20" Padding="20">
             <StackPanel Background="#FFF4EEEE">
@@ -16,9 +16,6 @@
                 <TextBox Text="{Binding CurrentUser.Gmail}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFFFFEFE"/>
                 <TextBlock Text="Phone Number:"/>
                 <TextBox Text="{Binding CurrentUser.PhoneNumber}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFFFFEFE"/>
-                <TextBox Text="{Binding CurrentUser.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10"/>
-                <Button Content="Save"  Style="{StaticResource MaterialDesignRaisedButton}" Margin="0,20,0,0"/>
-                <TextBox Text="{Binding CurrentUser.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10"/>
                 <Button Content="Save"  Style="{StaticResource MaterialDesignRaisedButton}" Margin="0,20,0,0" RenderTransformOrigin="0.5,0.543"/>
             </StackPanel>
         </materialDesign:Card>

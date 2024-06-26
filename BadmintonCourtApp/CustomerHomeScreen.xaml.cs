@@ -24,13 +24,15 @@ namespace BadmintonCourtApp
         private readonly CourtRepository _courtRepository;
         private readonly ItemRepository _itemRepository;
         private List<BadmintonCourt> allCourts;
+        private readonly int uid;
 
-        public CustomerHomeScreen(CourtRepository r, ItemRepository itemRepository)
+        public CustomerHomeScreen(CourtRepository r, ItemRepository itemRepository,int id)
         {
             InitializeComponent();
             _courtRepository = r;
             loadData();
             _itemRepository = itemRepository;
+            uid = id;
         }
         private void loadData()
         {
@@ -54,7 +56,7 @@ namespace BadmintonCourtApp
         {
             if (CourtDataGrid.SelectedItem is BadmintonCourt selectedCourt)
             {
-                var courtDetailWindow = new CourtDetailWindow(selectedCourt,_itemRepository,_courtRepository);
+                var courtDetailWindow = new CourtDetailWindow(selectedCourt,_itemRepository,_courtRepository,uid);
                 courtDetailWindow.ShowDialog();
             }
         }

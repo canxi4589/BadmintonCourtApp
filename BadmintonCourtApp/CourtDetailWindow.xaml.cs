@@ -3,7 +3,7 @@ using Repository.repository;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-// SelectedDateChanged="DatePicker_SelectedDateChanged"
+
 namespace BadmintonCourtApp
 {
     public partial class CourtDetailWindow : Window
@@ -11,8 +11,9 @@ namespace BadmintonCourtApp
         private readonly BadmintonCourt _court;
         private readonly ItemRepository _itemRepository;
         private readonly CourtRepository _courtRepository;
+        private readonly int userid;
 
-        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository)
+        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository,int serid)
         {
             _itemRepository = itemRepository;
             _courtRepository = courtRepository;
@@ -20,6 +21,7 @@ namespace BadmintonCourtApp
             _court = court;
             LoadCourtDetails();
             LoadItemTypes();
+            userid = serid;
         }
 
         private void LoadCourtDetails()
@@ -29,8 +31,6 @@ namespace BadmintonCourtApp
             CapacityTextBlock.Text = _court.Capacity.ToString();
             PriceTextBlock.Text = _court.Price.ToString();
             DescriptionTextBlock.Text = _court.Description;
-
-            
         }
 
         private void LoadItemTypes()
@@ -61,13 +61,15 @@ namespace BadmintonCourtApp
                 .Select(c => new ItemsViewModel
                 {
                     ItemId = c.ItemId,
-                    Name = c.Name
+                    Name = c.Name,
+                    Price = (int)c.Price // Assuming Item has a Price property
                 }).ToList();
 
-            ItemsComboBox.ItemsSource = items;
-            ItemsComboBox.DisplayMemberPath = "Name";
-            ItemsComboBox.SelectedValuePath = "ItemId";
+            ItemsListBox.ItemsSource = items;
+            ItemsListBox.DisplayMemberPath = "Name";
+            ItemsListBox.SelectedValuePath = "ItemId";
         }
+
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DatePicker.SelectedDate.HasValue)
@@ -82,33 +84,81 @@ namespace BadmintonCourtApp
                 .Select(c => new TimeSlotViewModel
                 {
                     TimeSlotID = (int)c.TimeSlotId,
+                    value = _courtRepository.GetTimeSlotById((int)c.TimeSlotId).Value + (_courtRepository.IsTimeSlotBooked(_court.CourtId, (int)c.TimeSlotId, date) ? " (Booked)" : ""),
                     TimeSlot = c.TimeSlot.Name,
                     IsBooked = _courtRepository.IsTimeSlotBooked(_court.CourtId, (int)c.TimeSlotId, date),
                     IsBookedText = _courtRepository.IsTimeSlotBooked(_court.CourtId, (int)c.TimeSlotId, date) ? " (Booked)" : ""
                 }).ToList();
 
             TimeslotListBox.ItemsSource = timeSlots;
+            TimeslotListBox.DisplayMemberPath = "value";
         }
+
         private void BookCourtButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedTimeslot = TimeslotListBox.SelectedItem as TimeSlotViewModel;
-            var selectedItem = ItemsComboBox.SelectedItem as ItemsViewModel;
+            var selectedItems = ItemsListBox.SelectedItems.Cast<ItemsViewModel>().ToList();
 
-            if (selectedTimeslot == null || selectedItem == null)
+            if (selectedTimeslot == null || !selectedItems.Any())
             {
-                MessageBox.Show("Please select a timeslot and a service item.");
+                MessageBox.Show("Please select a timeslot and at least one service item.");
                 return;
             }
 
-            // Implement booking logic
+
+
+            // Create a new booking
+            var newBooking = new Booking
+            {
+                UserId = userid,
+                CourtId = _court.CourtId,
+                NumberOfGuest = 0, // Update this as per your requirements
+                SpecialNote = "",  // Update this as per your requirements
+                TotalPrice = CalculateTotalPrice(selectedTimeslot, selectedItems)
+            };
+
+            // Add selected timeslot to the booking
+            newBooking.BookingSlots.Add(new BookingSlot
+            {
+                Vstid = selectedTimeslot.TimeSlotID
+            });
+
+            // Add selected items to the booking
+            foreach (var item in selectedItems)
+            {
+                newBooking.BookingItems.Add(new BookingItem
+                {
+                    ItemId = item.ItemId,
+                    UnitQuantity = 1, // Update this as per your requirements
+                    SumPrice = item.Price // Assuming each item has a Price property
+                });
+            }
+
+            // Save the booking to the database
+            _courtRepository.AddBooking(newBooking);
+
             MessageBox.Show("Court booked successfully!");
-            this.Close();
+        }
+
+      
+
+        private int CalculateTotalPrice(TimeSlotViewModel selectedTimeslot, List<ItemsViewModel> selectedItems)
+        {
+            int totalPrice = _court.Price ?? 0; // Add court price if applicable
+
+            foreach (var item in selectedItems)
+            {
+                totalPrice += item.Price; // Assuming each item has a Price property
+            }
+
+            return totalPrice;
         }
     }
 
     public class TimeSlotViewModel
     {
         public int TimeSlotID { get; set; }
+        public string value { get; set; }
         public string TimeSlot { get; set; }
         public bool IsBooked { get; set; }
         public string IsBookedText { get; set; }
@@ -118,6 +168,7 @@ namespace BadmintonCourtApp
     {
         public int ItemId { get; set; }
         public string Name { get; set; }
+        public int Price { get; set; } // Assuming Item has a Price property
     }
 
     public class TypeViewModel
