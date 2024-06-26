@@ -21,12 +21,14 @@ namespace BadmintonCourtApp
         private readonly DBContext _dbContext;
         private readonly UserRepository _userRepository;
         private readonly CourtRepository _courseRepository;
+        private readonly ItemRepository _itemRepository;
         public MainWindow()
         {
             InitializeComponent();
             var context = new DBContext();
             _userRepository = new UserRepository(context);
             _courseRepository = new CourtRepository(context);
+            _itemRepository = new ItemRepository(context);
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
@@ -41,7 +43,7 @@ namespace BadmintonCourtApp
                 User u = _userRepository.Login(username, password);
                 if (u.Role == "Customer")
                 {
-                    CustomerHomeScreen customerHomeScreen = new CustomerHomeScreen(_courseRepository);
+                    CustomerHomeScreen customerHomeScreen = new CustomerHomeScreen(_courseRepository,_itemRepository);
                     this.Close();
                     customerHomeScreen.ShowDialog();
                 }

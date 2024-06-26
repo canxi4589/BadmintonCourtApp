@@ -22,14 +22,15 @@ namespace BadmintonCourtApp
     public partial class CustomerHomeScreen : Window
     {
         private readonly CourtRepository _courtRepository;
+        private readonly ItemRepository _itemRepository;
         private List<BadmintonCourt> allCourts;
 
-        public CustomerHomeScreen(CourtRepository r)
+        public CustomerHomeScreen(CourtRepository r, ItemRepository itemRepository)
         {
             InitializeComponent();
             _courtRepository = r;
             loadData();
-
+            _itemRepository = itemRepository;
         }
         private void loadData()
         {
@@ -53,7 +54,7 @@ namespace BadmintonCourtApp
         {
             if (CourtDataGrid.SelectedItem is BadmintonCourt selectedCourt)
             {
-                var courtDetailWindow = new CourtDetailWindow(selectedCourt);
+                var courtDetailWindow = new CourtDetailWindow(selectedCourt,_itemRepository,_courtRepository);
                 courtDetailWindow.ShowDialog();
             }
         }
