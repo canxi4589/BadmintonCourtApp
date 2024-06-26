@@ -43,7 +43,7 @@ namespace BadmintonCourtApp
                 User u = _userRepository.Login(username, password);
                 if (u.Role == "Customer")
                 {
-                    CustomerHomeScreen customerHomeScreen = new CustomerHomeScreen(_courseRepository,_itemRepository);
+                    CustomerHomeScreen customerHomeScreen = new CustomerHomeScreen(_courseRepository,_itemRepository,u.UserId);
                     this.Close();
                     customerHomeScreen.ShowDialog();
                 }
@@ -72,8 +72,6 @@ namespace BadmintonCourtApp
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
         {
             registerWindow registerWindow = new registerWindow(_userRepository);
-            this.Close();
-
             registerWindow.ShowDialog();
 
 

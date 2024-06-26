@@ -26,14 +26,25 @@ namespace Repository.repository
         }
         public bool IsTimeSlotBooked(int courtId, int timeSlotId, DateTime date)
         {
+            var targetDate = DateOnly.FromDateTime(date);
             return _context.Bookings
                 .Include(b => b.BookingSlots)
                 .Any(b => b.CourtId == courtId &&
-                          b.BookingSlots.Any(bs => bs.Vstid == timeSlotId && bs.BookDate == DateOnly.FromDateTime(date)));
+                          b.BookingSlots.Any(bs => bs.Vstid == timeSlotId && bs.BookDate == targetDate));
         }
         public List<Location> getAllLocation()
         {
             return _context.Locations.ToList();
+        }
+        public TimeSlot GetTimeSlotById(int id)
+        {
+            return _context.TimeSlots.FirstOrDefault(c => c.TimeSlotId == id);
+        }
+
+        public void AddBooking(Booking newBooking)
+        {
+            _context.Bookings.Add(newBooking);
+            _context.SaveChanges();
         }
     }
 }
