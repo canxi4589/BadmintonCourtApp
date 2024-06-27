@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BadmintonCourtApp
-build_property.ProjectDir = D:\Program Files\BadmintonCourtApp\BadmintonCourtApp\
+build_property.ProjectDir = C:\Users\caotr\source\repos\BadmintonCourtApp\BadmintonCourtApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

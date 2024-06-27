@@ -184,3 +184,5 @@ D:\Program Files\BadmintonCourtApp\BadmintonCourtApp\obj\Debug\net8.0-windows\Ba
 D:\Program Files\BadmintonCourtApp\BadmintonCourtApp\obj\Debug\net8.0-windows\Badminto.3C29F5BD.Up2Date
 D:\Program Files\BadmintonCourtApp\BadmintonCourtApp\obj\Debug\net8.0-windows\BadmintonCourtApp.genruntimeconfig.cache
 D:\Program Files\BadmintonCourtApp\BadmintonCourtApp\obj\Debug\net8.0-windows\ref\BadmintonCourtApp.dll
+C:\Users\caotr\source\repos\BadmintonCourtApp\BadmintonCourtApp\obj\Debug\net8.0-windows\BookingHistory.g.cs
+C:\Users\caotr\source\repos\BadmintonCourtApp\BadmintonCourtApp\obj\Debug\net8.0-windows\BookingHistory.baml
