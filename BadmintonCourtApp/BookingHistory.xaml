@@ -9,13 +9,17 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" Height="414" VerticalAlignment="Center" Width="780">
             <Label Content="BOOKING HISTORY" Height="91" FontSize="48" Width="446" FontWeight="Bold"/>
-            <DataGrid Name="BookingHistoryDtg" Height="235" Width="638" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid Name="BookingHistoryDtg" Height="235" Width="723" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Booking ID" Binding="{Binding BookingId}" Width="*" />
                     <DataGridTextColumn Header="Court Name" Binding="{Binding Court.CourtName}" Width="*" />
                     <DataGridTextColumn Header="Number of Guest" Binding="{Binding NumberOfGuest}" Width="*" />
                     <DataGridTextColumn Header="Special Note" Binding="{Binding SpecialNote}" Width="*" />
                     <DataGridTextColumn Header="Total Price" Binding="{Binding TotalPrice}" Width="*" />
+                    <DataGridTextColumn Header="Items" Binding="{Binding BookingItemsNames}" Width="*" />
+                    <DataGridTextColumn Header="Dates" Binding="{Binding BookingSlotsDates}" Width="*" />
+                    <DataGridTextColumn Header="Slots" Binding="{Binding BookingSlotsTimes}" Width="*" />
+
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
