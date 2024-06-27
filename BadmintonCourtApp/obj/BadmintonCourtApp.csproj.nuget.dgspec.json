@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj": {}
+    "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj": {
+    "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj",
+        "projectUniqueName": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj",
         "projectName": "BadmintonCourtApp",
-        "projectPath": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj",
-        "packagesPath": "C:\\Users\\caotr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\BadmintonCourtApp\\obj\\",
+        "projectPath": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\BadmintonCourtApp\\BadmintonCourtApp.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\BadmintonCourtApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\caotr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Repository.csproj"
+              "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\Repository\\Repository.csproj"
               }
             }
           }
@@ -77,17 +81,21 @@
         }
       }
     },
-    "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Repository.csproj": {
+    "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\caotr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caotr\\source\\repos\\BadmintonCourtApp\\Repository\\obj\\",
+        "projectPath": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Schools\\PRN212\\Assignment\\BadmintonCourtApp\\Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\caotr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
