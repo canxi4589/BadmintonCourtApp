@@ -13,7 +13,7 @@ namespace BadmintonCourtApp
         private readonly CourtRepository _courtRepository;
         private readonly int userid;
 
-        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository,int serid)
+        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository,int userId)
         {
             _itemRepository = itemRepository;
             _courtRepository = courtRepository;
@@ -21,7 +21,7 @@ namespace BadmintonCourtApp
             _court = court;
             LoadCourtDetails();
             LoadItemTypes();
-            userid = serid;
+            userid = userId;
         }
 
         private void LoadCourtDetails()

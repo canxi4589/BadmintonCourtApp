@@ -41,6 +41,7 @@ namespace BadmintonCourtApp
                 
                 MessageBox.Show("Login successful!");
                 User u = _userRepository.Login(username, password);
+                Session.LoggedInUser = u;
                 if (u.Role == "Customer")
                 {
                     CustomerHomeScreen customerHomeScreen = new CustomerHomeScreen(_courseRepository,_itemRepository,u.UserId);
