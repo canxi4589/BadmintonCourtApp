@@ -51,7 +51,7 @@ namespace BadmintonCourtApp.AdminViews
 
         private void ToBookingWindow_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new BookingPage();
+            MainFrame.Content = new BookingPage(bookingRepository, userRepository, courtRepository);
         }
 
         private void ToAccountWindow_Click(object sender, RoutedEventArgs e)
