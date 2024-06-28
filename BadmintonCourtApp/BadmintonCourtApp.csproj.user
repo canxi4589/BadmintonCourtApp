@@ -7,6 +7,24 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AdminViews\AdminWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminViews\Pages\AccountPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminViews\Pages\BookingPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminViews\Pages\CourtsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminViews\Pages\DashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminViews\Pages\ItemPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="appsetting.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -30,6 +48,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AdminViews\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Pages\AccountPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Pages\BookingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Pages\CourtsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Pages\DashboardPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Pages\ItemPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="BookingHistory.xaml">
       <SubType>Designer</SubType>
     </Page>
