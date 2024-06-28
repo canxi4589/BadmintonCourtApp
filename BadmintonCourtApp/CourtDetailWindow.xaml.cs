@@ -35,7 +35,7 @@ namespace BadmintonCourtApp
 
         private void LoadItemTypes()
         {
-            var itemTypes = _itemRepository.GetItemsByType()
+            var itemTypes = _itemRepository.GetAllItemTypes()
                 .Select(c => new TypeViewModel
                 {
                     Id = c.ItemTypeId,
@@ -57,7 +57,7 @@ namespace BadmintonCourtApp
 
         private void LoadItems(int itemTypeId)
         {
-            var items = _itemRepository.GetItems(itemTypeId)
+            var items = _itemRepository.GetItemsByType(itemTypeId)
                 .Select(c => new ItemsViewModel
                 {
                     ItemId = c.ItemId,
