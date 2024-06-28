@@ -8,20 +8,41 @@ using System.Threading.Tasks;
 
 namespace Repository.repository
 {
+
+    /// <summary>
+    ///  This is the repository for managing Course Items related.
+    /// </summary>
     public class ItemRepository : BaseRepository<Item>
     {
-        private readonly DBContext _context;
         public ItemRepository(DBContext context) : base(context)
         {
-            _context = context;
         }
-        public List<Item> GetItems(int typeId)
+        public List<Item> GetAllItems()
         {
-            return _context.Items.Where(c => c.ItemTypeId==typeId).ToList();
+            return Context.Items.ToList();
         }
-        public List<ItemType> GetItemsByType()
+        
+        public List<Item> GetItemsByType(int typeId)
         {
-            return _context.ItemTypes.ToList();
+            return Context.Items.Where(c => c.ItemTypeId == typeId).ToList();
         }
+
+        public List<Item> GetItemsByName(string prefix)
+        {
+            return Context.Items
+                .Where(c => c.Name.Contains(prefix, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        public List<ItemType> GetAllItemTypes() 
+        {
+            return Context.ItemTypes.ToList();
+        }
+
+        public ItemType? GetItemType(int Id)
+        {
+            return Context.ItemTypes.Find(Id);
+        }
+
     }
 }
