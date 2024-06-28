@@ -19,6 +19,8 @@ public partial class Booking
 
     public int? TotalPrice { get; set; }
 
+    public string Status { get; set; }
+
     public virtual ICollection<BookingItem> BookingItems { get; set; } = new List<BookingItem>();
 
     public virtual ICollection<BookingSlot> BookingSlots { get; set; } = new List<BookingSlot>();
