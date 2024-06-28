@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Repository.Models;
 
@@ -39,18 +38,9 @@ public partial class DBContext : DbContext
     public virtual DbSet<VenueServiceTime> VenueServiceTimes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-         => optionsBuilder.UseSqlServer(GetConnectionString());
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=BadmintonCourtDB;User ID=sa;Password=12345;Encrypt=True");
 
-    private string GetConnectionString()
-    {
-        IConfiguration config = new ConfigurationBuilder()
-             .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsetting.json", true, true)
-                    .Build();
-        var strConn = config["ConnectionStrings:DBDefault"];
-
-        return strConn;
-    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<BadmintonCourt>(entity =>
@@ -83,6 +73,9 @@ public partial class DBContext : DbContext
             entity.Property(e => e.CourtId).HasColumnName("CourtID");
             entity.Property(e => e.SpecialNote)
                 .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UserId).HasColumnName("UserID");
 

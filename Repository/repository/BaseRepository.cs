@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace Repository.repository
 {
     public class BaseRepository<T> where T:class
     {
-        private readonly DbContext Context;
-        public BaseRepository(DbContext context)
+        protected readonly DBContext Context;
+        public BaseRepository(DBContext context)
         {
             Context = context;
         }
