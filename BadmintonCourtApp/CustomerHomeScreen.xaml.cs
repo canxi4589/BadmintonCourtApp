@@ -22,14 +22,19 @@ namespace BadmintonCourtApp
     public partial class CustomerHomeScreen : Window
     {
         private readonly CourtRepository _courtRepository;
+        private readonly ItemRepository _itemRepository;
+        private readonly BookingRepository _bookingRepository;
         private List<BadmintonCourt> allCourts;
+        private readonly int uid;
 
-        public CustomerHomeScreen(CourtRepository r)
+        public CustomerHomeScreen(CourtRepository r, ItemRepository itemRepository,int id)
         {
             InitializeComponent();
             _courtRepository = r;
             loadData();
-
+            _itemRepository = itemRepository;
+            _bookingRepository = new BookingRepository(new DBContext());
+            uid = id;
         }
         private void loadData()
         {
@@ -53,9 +58,15 @@ namespace BadmintonCourtApp
         {
             if (CourtDataGrid.SelectedItem is BadmintonCourt selectedCourt)
             {
-                var courtDetailWindow = new CourtDetailWindow(selectedCourt);
+                var courtDetailWindow = new CourtDetailWindow(selectedCourt,_itemRepository,_courtRepository,uid);
                 courtDetailWindow.ShowDialog();
             }
+        }
+
+        private void BookingHistoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BookingHistory bookingHistory = new BookingHistory(_bookingRepository,_courtRepository,_itemRepository);
+            bookingHistory.ShowDialog();
         }
     }
 }

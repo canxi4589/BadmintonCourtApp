@@ -1,32 +1,27 @@
 ﻿using Repository.Models;
-using System;
-using System.Collections.Generic;
+using Repository.repository;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace BadmintonCourtApp
 {
-    /// <summary>
-    /// Interaction logic for CourtDetailWindow.xaml
-    /// </summary>
     public partial class CourtDetailWindow : Window
     {
         private readonly BadmintonCourt _court;
+        private readonly ItemRepository _itemRepository;
+        private readonly CourtRepository _courtRepository;
+        private readonly int userid;
 
-        public CourtDetailWindow(BadmintonCourt court)
+        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository,int userId)
         {
+            _itemRepository = itemRepository;
+            _courtRepository = courtRepository;
             InitializeComponent();
             _court = court;
             LoadCourtDetails();
+            LoadItemTypes();
+            userid = userId;
         }
 
         private void LoadCourtDetails()
@@ -36,29 +31,149 @@ namespace BadmintonCourtApp
             CapacityTextBlock.Text = _court.Capacity.ToString();
             PriceTextBlock.Text = _court.Price.ToString();
             DescriptionTextBlock.Text = _court.Description;
+        }
 
-            // Load available timeslots and services
-            TimeslotListBox.ItemsSource = _court.VenueServiceTimes; // Assuming VenueServiceTimes contains the timeslots
-            ServiceListBox.ItemsSource = "hehe"; // Assuming there's a collection of services available for the court
+        private void LoadItemTypes()
+        {
+            var itemTypes = _itemRepository.GetAllItemTypes()
+                .Select(c => new TypeViewModel
+                {
+                    Id = c.ItemTypeId,
+                    Name = c.Type
+                }).ToList();
+
+            ItemTypeComboBox.ItemsSource = itemTypes;
+            ItemTypeComboBox.DisplayMemberPath = "Name";
+            ItemTypeComboBox.SelectedValuePath = "Id";
+        }
+
+        private void ItemTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ItemTypeComboBox.SelectedValue is int selectedTypeId)
+            {
+                LoadItems(selectedTypeId);
+            }
+        }
+
+        private void LoadItems(int itemTypeId)
+        {
+            var items = _itemRepository.GetItemsByType(itemTypeId)
+                .Select(c => new ItemsViewModel
+                {
+                    ItemId = c.ItemId,
+                    Name = c.Name,
+                    Price = (int)c.Price // Assuming Item has a Price property
+                }).ToList();
+
+            ItemsListBox.ItemsSource = items;
+            ItemsListBox.DisplayMemberPath = "Name";
+            ItemsListBox.SelectedValuePath = "ItemId";
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DatePicker.SelectedDate.HasValue)
+            {
+                LoadTimeslots(DatePicker.SelectedDate.Value);
+            }
+        }
+
+        private void LoadTimeslots(DateTime date)
+        {
+            var timeSlots = _courtRepository.getAllV(_court.CourtId)
+                .Select(c => new TimeSlotViewModel
+                {
+                    TimeSlotID = (int)c.TimeSlotId,
+                    value = _courtRepository.GetTimeSlotById((int)c.TimeSlotId).Value + (_courtRepository.IsTimeSlotBooked(_court.CourtId, (int)c.TimeSlotId, date) ? " (Booked)" : ""),
+                    TimeSlot = c.TimeSlot.Name,
+                    IsBooked = _courtRepository.IsTimeSlotBooked(_court.CourtId, (int)c.TimeSlotId, date),
+                    IsBookedText = _courtRepository.IsTimeSlotBooked(_court.CourtId, (int)c.TimeSlotId, date) ? " (Booked)" : ""
+                }).ToList();
+
+            TimeslotListBox.ItemsSource = timeSlots;
+            TimeslotListBox.DisplayMemberPath = "value";
         }
 
         private void BookCourtButton_Click(object sender, RoutedEventArgs e)
         {
-            // Handle booking logic here
-            // Retrieve selected timeslot and service
-            var selectedTimeslot = TimeslotListBox.SelectedItem as VenueServiceTime;
-            //var selectedService = ServiceListBox.SelectedItem as ;
+            var selectedTimeslot = TimeslotListBox.SelectedItem as TimeSlotViewModel;
+            var selectedItems = ItemsListBox.SelectedItems.Cast<ItemsViewModel>().ToList();
 
-            //if (selectedTimeslot == null || selectedService == null)
-            if (selectedTimeslot == null)
+            if (selectedTimeslot == null || !selectedItems.Any())
             {
-                MessageBox.Show("Please select a timeslot and a service.");
+                MessageBox.Show("Please select a timeslot and at least one service item.");
                 return;
             }
 
-            // Implement booking logic
+
+
+            // Create a new booking
+            var newBooking = new Booking
+            {
+                UserId = userid,
+                CourtId = _court.CourtId,
+                NumberOfGuest = 0, // Update this as per your requirements
+                SpecialNote = "",  // Update this as per your requirements
+                TotalPrice = CalculateTotalPrice(selectedTimeslot, selectedItems)
+            };
+
+            // Add selected timeslot to the booking
+            newBooking.BookingSlots.Add(new BookingSlot
+            {
+                Vstid = selectedTimeslot.TimeSlotID
+            });
+
+            // Add selected items to the booking
+            foreach (var item in selectedItems)
+            {
+                newBooking.BookingItems.Add(new BookingItem
+                {
+                    ItemId = item.ItemId,
+                    UnitQuantity = 1, // Update this as per your requirements
+                    SumPrice = item.Price // Assuming each item has a Price property
+                });
+            }
+
+            // Save the booking to the database
+            _courtRepository.AddBooking(newBooking);
+
             MessageBox.Show("Court booked successfully!");
-            this.Close();
         }
+
+      
+
+        private int CalculateTotalPrice(TimeSlotViewModel selectedTimeslot, List<ItemsViewModel> selectedItems)
+        {
+            int totalPrice = _court.Price ?? 0; // Add court price if applicable
+
+            foreach (var item in selectedItems)
+            {
+                totalPrice += item.Price; // Assuming each item has a Price property
+            }
+
+            return totalPrice;
+        }
+    }
+
+    public class TimeSlotViewModel
+    {
+        public int TimeSlotID { get; set; }
+        public string value { get; set; }
+        public string TimeSlot { get; set; }
+        public bool IsBooked { get; set; }
+        public string IsBookedText { get; set; }
+    }
+
+    public class ItemsViewModel
+    {
+        public int ItemId { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; } // Assuming Item has a Price property
+    }
+
+    public class TypeViewModel
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
