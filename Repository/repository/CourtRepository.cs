@@ -10,41 +10,39 @@ namespace Repository.repository
 {
     public class CourtRepository : BaseRepository<BadmintonCourt>
     {
-        private readonly DBContext _context;
         public CourtRepository(DBContext context) : base(context)
         {
-            _context = context;
         }
         public List<BadmintonCourt> getAll()
         {
-            var huh = _context.BadmintonCourts.Include(c => c.VenueServiceTimes).Include(c => c.Location);
+            var huh = Context.BadmintonCourts.Include(c => c.VenueServiceTimes).Include(c => c.Location);
             return huh.ToList();
         }
         public List<VenueServiceTime> getAllV(int id)
         {
-            return _context.VenueServiceTimes.Include(c => c.TimeSlot).Where(c => c.CourtId == id).ToList();
+            return Context.VenueServiceTimes.Include(c => c.TimeSlot).Where(c => c.CourtId == id).ToList();
         }
         public bool IsTimeSlotBooked(int courtId, int timeSlotId, DateTime date)
         {
             var targetDate = DateOnly.FromDateTime(date);
-            return _context.Bookings
+            return Context.Bookings
                 .Include(b => b.BookingSlots)
                 .Any(b => b.CourtId == courtId &&
                           b.BookingSlots.Any(bs => bs.Vstid == timeSlotId && bs.BookDate == targetDate));
         }
         public List<Location> getAllLocation()
         {
-            return _context.Locations.ToList();
+            return Context.Locations.ToList();
         }
         public TimeSlot GetTimeSlotById(int id)
         {
-            return _context.TimeSlots.FirstOrDefault(c => c.TimeSlotId == id);
+            return Context.TimeSlots.FirstOrDefault(c => c.TimeSlotId == id);
         }
 
         public void AddBooking(Booking newBooking)
         {
-            _context.Bookings.Add(newBooking);
-            _context.SaveChanges();
+            Context.Bookings.Add(newBooking);
+            Context.SaveChanges();
         }
     }
 }

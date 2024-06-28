@@ -10,10 +10,8 @@ namespace Repository.repository
 {
     public class UserRepository : BaseRepository<User>
     {
-        private readonly DBContext Context;
         public UserRepository(DBContext context) : base(context)
         {
-            Context = context;
         }
 
         public  User Login(string username, string password)
