@@ -46,9 +46,13 @@
                 <materialDesign:Card Grid.Column="0" Margin="10" Padding="10">
                     <StackPanel Background="#FFF9F7F7">
                         <TextBlock Text="Filter Courts" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <TextBox Name="LocationFilter" materialDesign:HintAssist.Hint="Location" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFF4EEEE"/>
-                        <TextBox Name="PriceFilter" materialDesign:HintAssist.Hint="Max Price" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFF4EEEE"/>
-                        <TextBox Name="TimeFilter" materialDesign:HintAssist.Hint="Time Available" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFF4EEEE"/>
+                        <TextBox Name="MinPriceFilter" materialDesign:HintAssist.Hint="Min Price" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFF4EEEE"/>
+                        <TextBox Name="MaxPriceFilter" materialDesign:HintAssist.Hint="Max Price" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,0,0,10" Background="#FFF4EEEE"/>
+                        <ComboBox Name="TimeFilter" materialDesign:HintAssist.Hint="Time Available" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,0,0,10" Background="#FFF4EEEE">
+                            <ComboBoxItem Content="Morning" />
+                            <ComboBoxItem Content="Afternoon" />
+                            <ComboBoxItem Content="Evening" />
+                        </ComboBox>
                         <Button Content="Apply Filters" Click="ApplyFiltersButton_Click"
                                 Style="{StaticResource MaterialDesignRaisedButton}" Margin="0,10,0,0"/>
                     </StackPanel>
@@ -71,7 +75,6 @@
                                   RowHeight="40" SelectionChanged="CourtDataGrid_SelectionChanged">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Court Name" Binding="{Binding CourtName}" Width="*" />
-                                <DataGridTextColumn Header="Location" Binding="{Binding Location.Name}" Width="*" />
                                 <DataGridTextColumn Header="Capacity" Binding="{Binding Capacity}" Width="*" />
                                 <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="*" />
                                 <DataGridTemplateColumn Header="Description" Width="2*">
