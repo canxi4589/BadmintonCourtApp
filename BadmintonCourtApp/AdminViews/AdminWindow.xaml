@@ -10,7 +10,7 @@
 
     <!-- This was created by Collin while he was trying to understand WPF fundamentals -->
     
-    <Grid x:Name="MainGrid" ShowGridLines="True">
+    <Grid x:Name="MainGrid" >
         <Grid.RowDefinitions>
             <RowDefinition Height="1.25*"/>
             <RowDefinition Height="10*"/>
@@ -33,7 +33,7 @@
             
         </Grid>
 
-        <Grid x:Name="Body" ShowGridLines="True" Grid.Row="1" Grid.Column="0">
+        <Grid x:Name="Body" Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="6*"/>

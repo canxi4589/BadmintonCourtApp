@@ -39,7 +39,7 @@ public partial class DBContext : DbContext
     public virtual DbSet<VenueServiceTime> VenueServiceTimes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    => optionsBuilder.UseSqlServer(GetConnectionString());
+        => optionsBuilder.UseSqlServer(GetConnectionString());
 
     private string GetConnectionString()
     {
@@ -51,6 +51,7 @@ public partial class DBContext : DbContext
 
         return strConn;
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<BadmintonCourt>(entity =>

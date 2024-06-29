@@ -26,7 +26,10 @@ namespace Repository.repository
             // This shit just so bad.
             return Context.Bookings
                 .Include(x => x.Court)
-                .Include(x => x.BookingSlots);
+                .Include(x => x.BookingSlots)
+                .ThenInclude(y => y.Vst)
+                .ThenInclude(z => z.TimeSlot)
+                .Include(a => a.User);
         }
     }
 }
