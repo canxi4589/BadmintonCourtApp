@@ -13,7 +13,7 @@ namespace Repository.repository
         public CourtRepository(DBContext context) : base(context)
         {
         }
-        public List<BadmintonCourt> getAll()
+        public List<BadmintonCourt> getAll1()
         {
             var huh = Context.BadmintonCourts.Include(c => c.VenueServiceTimes).Include(c => c.Location);
             return huh.ToList();
@@ -38,7 +38,7 @@ namespace Repository.repository
         {
             return Context.TimeSlots.FirstOrDefault(c => c.TimeSlotId == id);
         }
-
+      
         public void AddBooking(Booking newBooking)
         {
             Context.Bookings.Add(newBooking);

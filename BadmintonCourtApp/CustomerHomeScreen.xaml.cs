@@ -38,14 +38,30 @@ namespace BadmintonCourtApp
         }
         private void loadData()
         {
-            var courts = _courtRepository.GetAll();
+            var courts = _courtRepository.getAll1();
             CourtDataGrid.ItemsSource = courts;
             allCourts = courts.ToList();
         }
 
         private void ApplyFiltersButton_Click(object sender, RoutedEventArgs e)
         {
-                
+            int.TryParse(MinPriceFilter.Text, out int minPrice);
+            int.TryParse(MaxPriceFilter.Text, out int maxPrice);
+            string timeAvailable = (TimeFilter.SelectedItem as ComboBoxItem)?.Content as string;
+
+            var filteredCourts = allCourts.Where(court =>
+                (minPrice == 0 || court.Price >= minPrice) &&
+                (maxPrice == 0 || court.Price <= maxPrice) &&
+                (string.IsNullOrEmpty(timeAvailable) || MatchesTimeAvailable(court, timeAvailable))
+            ).ToList();
+
+            CourtDataGrid.ItemsSource = filteredCourts;
+        }
+
+        private bool MatchesTimeAvailable(BadmintonCourt court, string timeAvailable)
+        {
+            var availableTimeSlots = _courtRepository.getAllV(court.CourtId);
+            return availableTimeSlots.Any(ts => _courtRepository.GetTimeSlotById((int)ts.TimeSlotId).Name.Equals(timeAvailable, StringComparison.OrdinalIgnoreCase));
         }
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -60,6 +76,7 @@ namespace BadmintonCourtApp
             {
                 var courtDetailWindow = new CourtDetailWindow(selectedCourt,_itemRepository,_courtRepository,uid);
                 courtDetailWindow.ShowDialog();
+               
             }
         }
 
