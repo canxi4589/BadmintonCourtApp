@@ -79,6 +79,7 @@ namespace BadmintonCourtApp.AdminViews.Pages
                 {
                     item.SelectedBook.Status = "Done";
                     bookingRepository.Update(item.SelectedBook);
+                    MessageBox.Show("Checkin customer successfully");
                 }
                 else
                 {
