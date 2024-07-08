@@ -38,7 +38,7 @@ namespace BadmintonCourtApp
         }
         private void loadData()
         {
-            var courts = _courtRepository.getAll1();
+            var courts = _courtRepository.getAll();
             CourtDataGrid.ItemsSource = courts;
             allCourts = courts.ToList();
         }

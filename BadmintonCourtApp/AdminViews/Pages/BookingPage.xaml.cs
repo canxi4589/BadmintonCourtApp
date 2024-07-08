@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
+using MaterialDesignThemes.Wpf;
 
 namespace BadmintonCourtApp.AdminViews.Pages
 {
@@ -59,7 +60,9 @@ namespace BadmintonCourtApp.AdminViews.Pages
             userRepository = userRepo;
             courtRepository = courtRepo;
 
-            UpcomingBooks.ItemsSource = bookRepo.GetAllBookinInfoLiterally().Where(x => x.Status == "Booked").OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
+            UpcomingBooks.ItemsSource = bookRepo.GetAllBookinInfoLiterally().Where(x => x.Status == null).OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
+
+            SearchCourtInput.ItemsSource = courtRepo.GetAll().Select(x => x.CourtName);
 
             this.DataContext = new BookingDataContext();
         }
@@ -82,7 +85,7 @@ namespace BadmintonCourtApp.AdminViews.Pages
                     MessageBox.Show("You already check in this book", "Warning");
                 }
 
-                UpcomingBooks.ItemsSource = bookingRepository.GetAllBookinInfoLiterally().Where(x => x.Status == "Booked").OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
+                UpcomingBooks.ItemsSource = bookingRepository.GetAllBookinInfoLiterally().Where(x => x.Status == null).OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
             }
             else
             {
@@ -108,21 +111,32 @@ namespace BadmintonCourtApp.AdminViews.Pages
             this.DataContext = (this.DataContext as BookingDataContext);
         }
 
+        private void SearchInputChanged(string text, string courtName)
+        {
+            var result = bookingRepository.GetAllBookinInfoLiterally().Where(x => x.Status == null).OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
+
+            if (!text.IsNullOrEmpty())
+            {
+                result = result.Where(x => x.User.Name.Contains(text, StringComparison.OrdinalIgnoreCase));
+            }
+            if (!courtName.IsNullOrEmpty())
+            {
+                result = result.Where(x => x.Court.CourtName == courtName);
+            }
+
+            UpcomingBooks.ItemsSource = result;
+        }
+
         private void SearchnNameInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var text = SearchnNameInput.Text;
+            Debug.WriteLine((sender as TextBox).Text);
+            SearchInputChanged((sender as TextBox).Text, null);
+        }
 
-
-            var result = bookingRepository.GetAllBookinInfoLiterally().OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
-        
-            if (text.IsNullOrEmpty())
-            {
-                UpcomingBooks.ItemsSource = result;
-            }
-            else
-            {
-                UpcomingBooks.ItemsSource = result.Where(x => x.User.Name.Contains(text, StringComparison.OrdinalIgnoreCase));
-            }
+        private void SearchCourtInput_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Debug.WriteLine(e.AddedItems[0].ToString());
+            SearchInputChanged(null, e.AddedItems[0].ToString());
         }
     }
 }

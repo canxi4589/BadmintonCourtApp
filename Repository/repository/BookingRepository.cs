@@ -29,7 +29,8 @@ namespace Repository.repository
                 .Include(x => x.BookingSlots)
                 .ThenInclude(y => y.Vst)
                 .ThenInclude(z => z.TimeSlot)
-                .Include(a => a.User);
+                .Include(a => a.User)
+                .ToList();
         }
     }
 }

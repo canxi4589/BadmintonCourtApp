@@ -13,6 +13,9 @@
     <Compile Update="AdminViews\Pages\AccountPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AdminViews\Pages\AddCourtPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AdminViews\Pages\BookingPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +57,9 @@
     <Page Update="AdminViews\Pages\AccountPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="AdminViews\Pages\AddCourtPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AdminViews\Pages\BookingPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -64,6 +70,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AdminViews\Pages\ItemPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Popup\AddCourtWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\Popup\UpdateCourtWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="BookingHistory.xaml">

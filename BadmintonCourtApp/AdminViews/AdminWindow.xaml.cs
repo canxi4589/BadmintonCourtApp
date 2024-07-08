@@ -41,12 +41,12 @@ namespace BadmintonCourtApp.AdminViews
             courtRepository = new CourtRepository(context);
             userRepository = new UserRepository(context);
 
-            MainFrame.Content = new DashboardPage(bookingRepository, courtRepository);
+            MainFrame.Content = new DashboardPage(bookingRepository);
         }
 
         private void ToAdminWindow_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new DashboardPage(bookingRepository, courtRepository);
+            MainFrame.Content = new DashboardPage(bookingRepository);
         }
 
         private void ToBookingWindow_Click(object sender, RoutedEventArgs e)
@@ -61,7 +61,7 @@ namespace BadmintonCourtApp.AdminViews
 
         private void ToCourtWindow_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new CourtsPage();
+            MainFrame.Content = new CourtsPage(courtRepository);
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)

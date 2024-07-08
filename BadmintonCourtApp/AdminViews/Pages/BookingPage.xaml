@@ -42,7 +42,7 @@
 
                     <StackPanel>
                         <Label>Filter By Court</Label>
-                        <ComboBox x:Name="SearchCourtInput" Width="150"/>
+                        <ComboBox x:Name="SearchCourtInput" Width="150" SelectionChanged="SearchCourtInput_SelectionChanged"/>
                     </StackPanel>
                 </StackPanel>
                 <DataGrid x:Name="UpcomingBooks" AutoGenerateColumns="False" IsReadOnly="True" Margin="10, 0, 10, 5" 

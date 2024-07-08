@@ -42,7 +42,7 @@ namespace BadmintonCourtApp.AdminViews.Pages
     /// </summary>
     public partial class DashboardPage : Page
     {
-        public DashboardPage(BookingRepository bookingRepo, CourtRepository courtRepo)
+        public DashboardPage(BookingRepository bookingRepo)
         {
             InitializeComponent();
 
