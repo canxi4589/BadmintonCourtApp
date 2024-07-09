@@ -9,6 +9,38 @@
       Title="ItemPage">
 
     <Grid>
-        
+        <Border
+Margin="30,178,30,36" CornerRadius="15" BorderThickness="3" BorderBrush="Black">
+            <StackPanel
+Width="740" Margin="0,7,0,0" HorizontalAlignment="Center" Height="226" VerticalAlignment="Top">
+                <Label
+Width="143" x:Name="CustometLabel" FontSize="30" Content="Items List"/>
+                <DataGrid
+x:Name="ItemList" IsReadOnly="True" AutoGenerateColumns="False" Width="736" SelectionChanged="ItemList_SelectionChanged">
+                    <DataGrid.Columns
+>
+                        <DataGridTextColumn
+Binding="{Binding ItemId}" Header="ID" Width="*"/>
+                        <DataGridTextColumn
+Binding="{Binding ItemType.Type}" Header="Type" Width="*"/>
+                        <DataGridTextColumn
+Binding="{Binding Name}" Header="Item Name" Width="*"/>
+                        <DataGridTextColumn
+Binding="{Binding Price}" Header="Price" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+        <Button x:Name="AddBtn" Content="Add New" HorizontalAlignment="Left" Margin="565,68,0,0" VerticalAlignment="Top" Click="AddBtn_Click"/>
+        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="702,67,0,0" VerticalAlignment="Top" Click="DeleteBtn_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="0" Margin="142,480,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="237,69,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Price" HorizontalAlignment="Left" Margin="398,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ItemTypeComboBox" HorizontalAlignment="Left" Margin="68,67,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ItemTypeComboBox_Copy" HorizontalAlignment="Left" Margin="68,120,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Name_Copy" HorizontalAlignment="Left" Margin="237,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Price_Copy" HorizontalAlignment="Left" Margin="400,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Left" Margin="570,120,0,0" VerticalAlignment="Top" Click="UpdateBtn_Click"/>
+
     </Grid>
 </Page>

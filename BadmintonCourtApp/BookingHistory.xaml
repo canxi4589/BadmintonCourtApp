@@ -16,6 +16,8 @@
                     <DataGridTextColumn Header="Number of Guest" Binding="{Binding NumberOfGuest}" Width="*" />
                     <DataGridTextColumn Header="Special Note" Binding="{Binding SpecialNote}" Width="*" />
                     <DataGridTextColumn Header="Total Price" Binding="{Binding TotalPrice}" Width="*" />
+                    <DataGridTextColumn Header="Items" Binding="{Binding BookingItemsNames}" Width="*" />
+                    <DataGridTextColumn Header="Dates" Binding="{Binding BookingSlotsDates}" Width="*" />
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

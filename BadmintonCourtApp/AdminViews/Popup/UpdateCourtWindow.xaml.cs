@@ -50,7 +50,7 @@ namespace BadmintonCourtApp.AdminViews.Popup
          Name = c.Name ?? string.Empty // Handle null Name property
      }).ToList() ?? new List<LocationViewModel>();
 
-            LocationComboBox.ItemsSource = locations.ToArray();
+            LocationComboBox.ItemsSource = locations;
             LocationComboBox.DisplayMemberPath = "Name";
             LocationComboBox.SelectedValuePath = "LocationID";
         }
