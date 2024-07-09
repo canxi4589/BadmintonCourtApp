@@ -35,7 +35,10 @@ namespace BadmintonCourtApp
         {
             string username = UsernameTextBox.Text;
             string password = PasswordBox.Password;
-
+            if(username == null || password == null)
+            {
+                MessageBox.Show("Invalid username or password. Please try again!");
+            }
             // Placeholder for login authentication logic
             if (_userRepository.Login(username, password)!=null)
             {
@@ -68,14 +71,14 @@ namespace BadmintonCourtApp
             }
             else
             {
-                ErrorMessageTextBlock.Text = "Invalid username or password. Please try again.";
+                //"Invalid username or password. Please try again."
+                MessageBox.Show("Invalid username or password. Please try again!"); 
             }
         }
 
         private void ForgotPasswordLink_Click(object sender, RoutedEventArgs e)
         {
             forgotPasswordWindow forgotPasswordWindow = new forgotPasswordWindow(_userRepository);
-            this.Close();
 
             forgotPasswordWindow.ShowDialog();
             MessageBox.Show("Redirect to forgot password page or functionality.");
