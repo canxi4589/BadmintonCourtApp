@@ -50,7 +50,9 @@ namespace BadmintonCourtApp
                 }
                 else
                 {
-                    //plaplapla
+                    AdminViews.AdminWindow adminWindow = new AdminViews.AdminWindow();
+                    this.Close();
+                    adminWindow.ShowDialog();
                 }
                 // Navigate to appropriate home screen based on user role
                 // Example: if (userRole == "Admin") { Open Admin Home Screen }
