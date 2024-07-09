@@ -1,4 +1,5 @@
-﻿using Repository.Models;
+﻿using BadmintonCourtApp.AdminViews;
+using Repository.Models;
 using Repository.repository;
 using System.Text;
 using System.Windows;
@@ -48,6 +49,13 @@ namespace BadmintonCourtApp
                     this.Close();
                     customerHomeScreen.ShowDialog();
                 }
+                else if (u.Role == "Admin")
+                {
+                    AdminWindow adminWindow = new AdminWindow();
+                    this.Close();
+                    adminWindow.ShowDialog();
+                }
+
                 else
                 {
                     //plaplapla

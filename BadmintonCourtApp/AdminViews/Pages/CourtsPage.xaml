@@ -9,6 +9,42 @@
       Title="CourtsPage">
 
     <Grid>
-        
+        <Border
+    Margin="28,109,31,24" CornerRadius="15" BorderThickness="3" BorderBrush="Black">
+            <StackPanel
+    Width="741" Margin="0,-3,0,3" HorizontalAlignment="Center">
+                <Label
+    Width="143" x:Name="CustometLabel" FontSize="30" Content="Court List"/>
+                <DataGrid
+    x:Name="CourtList" IsReadOnly="True" AutoGenerateColumns="False" Width="736">
+                    <DataGrid.Columns
+    >
+                        <DataGridTextColumn
+    Binding="{Binding CourtId}" Header="ID" Width="*"/>
+                        <DataGridTextColumn
+    Binding="{Binding Location.Name}" Header="Location" Width="*"/>
+                        <DataGridTextColumn
+    Binding="{Binding CourtName}" Header="Court Name" Width="*"/>
+                        <DataGridTextColumn
+    Binding="{Binding Capacity}" Header="Capacity" Width="*"/>
+                        <DataGridTextColumn
+    Binding="{Binding Description}" Header="Description" Width="*"/>
+                        <DataGridTextColumn
+    Binding="{Binding Price}" Header="Price" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+        <Button x:Name="Update_Button" Content="Update Selected court" HorizontalAlignment="Left" Margin="651,5,0,0" VerticalAlignment="Top" Height="33" Width="139" Click="Update_Button_Click"/>
+        <TextBox x:Name="IDSearchTextBox" HorizontalAlignment="Left" Margin="50,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,72,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="189,70,0,0" TextWrapping="Wrap" Text="Location:" VerticalAlignment="Top"/>
+        <TextBox x:Name="LocationSearchTextBox" HorizontalAlignment="Left" Margin="243,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NameSearchTextBox" HorizontalAlignment="Left" Margin="420,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,70,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="616,54,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Search_Button_Click"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="569,67,0,0" VerticalAlignment="Top" Click="Clear_Button_Click"/>
+        <Button x:Name="Delete_Button" Content="Delete Selected &#xa;         court " HorizontalAlignment="Left" Margin="696,47,0,0" VerticalAlignment="Top" Height="51" Width="94" Click="Delete_Button_Click"/>
+        <Button x:Name="Add_Button" Content="Add New court" HorizontalAlignment="Left" Margin="538,10,0,0" VerticalAlignment="Top" Height="28" Width="92" Click="Add_Button_Click"/>
     </Grid>
 </Page>

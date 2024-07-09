@@ -8,7 +8,75 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BookingPage">
 
-    <Grid>
-        
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" FontSize="40" HorizontalAlignment="Center" FontWeight="Bold">Booking Manager</Label>
+
+        <Grid x:Name="CheckinLayout" Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.RowSpan="2">
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type StackPanel}">
+                            <Setter Property="Margin" Value="50,0,50,10"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <StackPanel>
+                        <Label>Search by Customer Name</Label>
+                        <TextBox x:Name="SearchnNameInput" Width="160" FontSize="18" TextAlignment="Left" TextChanged="SearchnNameInput_TextChanged"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label>Filter By Court</Label>
+                        <ComboBox x:Name="SearchCourtInput" Width="150" SelectionChanged="SearchCourtInput_SelectionChanged"/>
+                    </StackPanel>
+                </StackPanel>
+                <DataGrid x:Name="UpcomingBooks" AutoGenerateColumns="False" IsReadOnly="True" Margin="10, 0, 10, 5" 
+                          SelectedCellsChanged="UpcomingBooks_CurrentCellChanged"
+                          SelectedItem="{Binding Path=SelectedBook, Mode=TwoWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding BookingId}" Width="0.5*" />
+                        <DataGridTextColumn Header="Court Name" Binding="{Binding Court.CourtName}" Width="1.3*" />
+                        <DataGridTextColumn Header="Number of Guest" Binding="{Binding NumberOfGuest}" Width="1.5*" />
+                        <DataGridTextColumn Header="price" Binding="{Binding TotalPrice}" Width="1.2*" />
+                        <DataGridTextColumn Header="BookDate" Binding="{Binding BookingSlots[0].BookDate}" Width="*" />
+                        <DataGridTextColumn Header="Time" Binding="{Binding BookingSlots[0].Vst.TimeSlot.Value}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            
+
+            <StackPanel Grid.Column="1" Grid.RowSpan="2">
+                <Label FontSize="18" FontWeight="Bold" HorizontalAlignment="Center">Booking information</Label>
+
+                <Label Content="Customer Name"/>
+                <Label Content="{Binding UserName}" Height="25"/>
+                <Label Content="Customer Phone"/>
+                <Label Content="{Binding UserPhone}" Height="25"/>
+                <Label Content="Price"/>
+                <Label Content="{Binding TotalPrice}" Height="25"/>
+                <Label Content="Note"/>
+
+                <Border Margin="5, 0, 5, 0" MinHeight="100" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                    <Label Content="{Binding Note}" />
+                </Border>
+
+                <Button x:Name="CheckInButton" Background="AliceBlue" Margin="30, 10, 30, 0" Click="CheckInButton_Click">Checkin</Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
