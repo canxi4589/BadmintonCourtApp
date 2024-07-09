@@ -19,7 +19,7 @@ namespace Repository.repository
         }
         public List<Item> GetAllItems()
         {
-            return Context.Items.ToList();
+            return Context.Items.Include(i=>i.ItemType).ToList();
         }
         
         public List<Item> GetItemsByType(int typeId)

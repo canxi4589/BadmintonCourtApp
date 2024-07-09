@@ -71,5 +71,10 @@ namespace BadmintonCourtApp.AdminViews
             this.Close();
             mainWindow.Show();
         }
+
+        private void ToItemWindow_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ItemPage(itemRepository);
+        }
     }
 }

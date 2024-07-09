@@ -55,7 +55,7 @@
                         <Button x:Name="ToBookingWindow" Background="Transparent" Height="50" FontSize="15" Click="ToBookingWindow_Click">Booking</Button>
                         <Button x:Name="ToAccountWindow" Background="Transparent" Height="50" FontSize="15" Click="ToAccountWindow_Click">Accounts</Button>
                         <Button x:Name="ToCourtWindow" Background="Transparent" Height="50" FontSize="15" Click="ToCourtWindow_Click">Courts</Button>
-                        <Button x:Name="ToItemWindow" Background="Transparent" Height="50" FontSize="15">Court Items</Button>
+                        <Button x:Name="ToItemWindow" Background="Transparent" Height="50" FontSize="15" Click="ToItemWindow_Click">Court Items</Button>
                     </StackPanel>
                 </Grid>
             </ItemsControl>
