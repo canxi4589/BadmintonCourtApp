@@ -45,9 +45,7 @@ namespace BadmintonCourtApp.AdminViews.Pages
         public DashboardPage(BookingRepository bookingRepo)
         {
             InitializeComponent();
-
             var todayBooking = bookingRepo.GetAllBookinInfoLiterally();
-
             int finished = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate <= DateOnly.FromDateTime(DateTime.Now))).Count();
             int upcoming = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now))).Count();
             int totalAwait = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now))).Sum(x => Convert.ToInt32(x.TotalPrice));

@@ -24,12 +24,14 @@ namespace BadmintonCourtApp
         private readonly CourtRepository _courtRepository;
         private readonly ItemRepository _itemRepository;
         private readonly BookingRepository _bookingRepository;
+        private readonly UserRepository _userRepository;
         private List<BadmintonCourt> allCourts;
         private readonly int uid;
 
         public CustomerHomeScreen(CourtRepository r, ItemRepository itemRepository,int id)
         {
             InitializeComponent();
+            _userRepository = new UserRepository(new DBContext());
             _courtRepository = r;
             loadData();
             _itemRepository = itemRepository;
@@ -84,6 +86,12 @@ namespace BadmintonCourtApp
         {
             BookingHistory bookingHistory = new BookingHistory(_bookingRepository,_courtRepository,_itemRepository);
             bookingHistory.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            profileForm profileForm = new profileForm(_userRepository,uid);
+            profileForm.ShowDialog();
         }
     }
 }

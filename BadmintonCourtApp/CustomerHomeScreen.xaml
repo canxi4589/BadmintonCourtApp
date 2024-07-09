@@ -20,7 +20,7 @@
                 <DockPanel HorizontalAlignment="Center">
                     <TextBlock Text="Welcome to Badminton Court Booking" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" Background="White" DockPanel.Dock="Left" />
                     <Button Content="Profile" Margin="10,0,0,0" 
-                            Style="{StaticResource MaterialDesignFlatButton}" Background="#FFF4EEEE" DockPanel.Dock="Left" />
+                            Style="{StaticResource MaterialDesignFlatButton}" Background="#FFF4EEEE" DockPanel.Dock="Left" Click="Button_Click" />
                     <Button x:Name="BookingHistoryBtn" Content="Past Bookings" Margin="10,0,0,0" 
                             Style="{StaticResource MaterialDesignFlatButton}" Background="#FFDBC4EA" DockPanel.Dock="Left" Click="BookingHistoryBtn_Click" />
                     <TextBox Name="SearchBox"
