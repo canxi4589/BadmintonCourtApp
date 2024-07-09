@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Media;
 using Brushes = System.Windows.Media.Brushes;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BadmintonCourtApp
 {
@@ -16,15 +17,19 @@ namespace BadmintonCourtApp
         private readonly ItemRepository _itemRepository;
         private readonly CourtRepository _courtRepository;
         private readonly int _userId;
+        private int originPrice;
 
         public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository, int userId)
         {
+            InitializeComponent();
             _itemRepository = itemRepository;
             _courtRepository = courtRepository;
             _userId = userId;
-            InitializeComponent();
             _court = court;
+
             LoadCourtDetails();
+            originPrice = int.Parse(PriceTextBlock.Text);
+
             LoadServices();
         }
 
@@ -97,14 +102,20 @@ namespace BadmintonCourtApp
                 MessageBox.Show("Please select a timeslot and at least one service item.");
                 return;
             }
-
+            int capacity;
+            if (!int.TryParse(CapacityTextBox.Text, out capacity) || capacity <= 0)
+            {
+                MessageBox.Show("Please enter a valid capacity (number of guests).");
+                return;
+            }
             var newBooking = new Booking
             {
                 UserId = _userId,
                 CourtId = _court.CourtId,
-                NumberOfGuest = 0,
-                SpecialNote = "",
-                TotalPrice = CalculateTotalPrice(selectedTimeslot, selectedItems)
+                Status = "Booked",
+                NumberOfGuest = capacity,
+                SpecialNote = NoteTextBox.Text,
+                TotalPrice = CalculateTotalPrice( selectedItems)
             };
 
             newBooking.BookingSlots.Add(new BookingSlot
@@ -130,16 +141,26 @@ namespace BadmintonCourtApp
             this.Close();
         }
 
-        private int CalculateTotalPrice(TimeSlotViewModel selectedTimeslot, List<ItemsViewModel> selectedItems)
+        private int CalculateTotalPrice( List<ItemsViewModel> selectedItems)
         {
             int totalPrice = _court.Price ?? 0;
-
+            if (selectedItems.IsNullOrEmpty()) return 0;
             foreach (var item in selectedItems)
             {
                 totalPrice += item.Price;
             }
-
             return totalPrice;
+        }
+
+        private void ServicesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItems = ServicesListBox.SelectedItems.Cast<ItemsViewModel>().ToList();
+            if (selectedItems.IsNullOrEmpty())
+            {
+                PriceTextBlock.Text = originPrice + "";
+                return;
+            }
+            PriceTextBlock.Text = originPrice + CalculateTotalPrice(selectedItems) + "";
         }
     }
 

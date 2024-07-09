@@ -27,7 +27,7 @@ namespace BadmintonCourtApp.AdminViews.Popup
         public AddCourtWindow(CourtRepository courtRepository)
         {
             this.courtRepository = courtRepository;
-            this.locationRepository = locationRepository;
+            this.locationRepository = new LocationRepository(new DBContext());
             InitializeComponent();
             LoadLocationName();
             clear();
@@ -75,7 +75,6 @@ namespace BadmintonCourtApp.AdminViews.Popup
                     Name = c.Name
                 }).ToList();
 
-            LocationComboBox.ItemsSource = locations;
             LocationComboBox.DisplayMemberPath = "Name";
             LocationComboBox.SelectedValuePath = "LocationID";
         }

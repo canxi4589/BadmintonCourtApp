@@ -72,15 +72,29 @@ namespace BadmintonCourtApp.AdminViews.Pages
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            BadmintonCourt badmintonCourt = (BadmintonCourt)CourtList.SelectedItem;
-            var result = System.Windows.MessageBox.Show("Are you sure you want to delete court " + badmintonCourt.CourtName, "Delete success", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
+            if (CourtList.SelectedItem is BadmintonCourt badmintonCourt)
             {
-                courtRepository.Remove(badmintonCourt);
-                System.Windows.MessageBox.Show("Court deleted successfully.", "Delete Success", MessageBoxButton.OK);
-                LoadBadmintonCourts();
+                var result = System.Windows.MessageBox.Show("Are you sure you want to delete court " + badmintonCourt.CourtName, "Delete success", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        courtRepository.Remove(badmintonCourt);
+                        System.Windows.MessageBox.Show("Court deleted successfully.", "Delete Success", MessageBoxButton.OK);
+                        LoadBadmintonCourts();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.MessageBox.Show($"Error deleting court: {ex.Message}", "Delete Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Please select a court to update.", "No Selection", MessageBoxButton.OK);
             }
         }
+
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -99,6 +113,7 @@ namespace BadmintonCourtApp.AdminViews.Pages
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
             AddCourtWindow addCourtWindow = new AddCourtWindow(courtRepository);
+            addCourtWindow.ShowDialog();
             LoadBadmintonCourts();
         }
     }

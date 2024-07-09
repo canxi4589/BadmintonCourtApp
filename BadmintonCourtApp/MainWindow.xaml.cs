@@ -87,6 +87,7 @@ namespace BadmintonCourtApp
         {
             registerWindow registerWindow = new registerWindow(_userRepository);
             registerWindow.ShowDialog();
+            Close();
 
 
         }
