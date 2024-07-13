@@ -15,6 +15,8 @@ public partial class Item
 
     public int? Price { get; set; }
 
+    public int? UnitQuantity { get; set; }
+
     public virtual ICollection<BookingItem> BookingItems { get; set; } = new List<BookingItem>();
 
     public virtual ItemType ItemType { get; set; }

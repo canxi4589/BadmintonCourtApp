@@ -48,12 +48,12 @@ namespace BadmintonCourtApp.AdminViews.Pages
             var todayBooking = bookingRepo.GetAllBookinInfoLiterally();
             int finished = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate <= DateOnly.FromDateTime(DateTime.Now))).Count();
             int upcoming = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now))).Count();
-            int totalAwait = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now))).Sum(x => Convert.ToInt32(x.TotalPrice));
-            int total = todayBooking.Sum(x => Convert.ToInt32(x.TotalPrice));
+            int totalAwait = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now)) && x.Status == "Booked").Sum(x => Convert.ToInt32(x.TotalPrice));
+            int total = todayBooking.Where(x => x.Status == "Done").Sum(x => Convert.ToInt32(x.TotalPrice));
 
             this.DataContext = new DashboardDataContext(todayBooking.Count(), finished, upcoming, totalAwait, total);
 
-            UpcomingBooks.ItemsSource = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now))) ;
+            UpcomingBooks.ItemsSource = todayBooking.Where(x => x.BookingSlots.Any(y => y.BookDate > DateOnly.FromDateTime(DateTime.Now)) && x.Status == "Booked") ;
         }
     }
 }

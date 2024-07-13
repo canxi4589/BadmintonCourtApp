@@ -103,7 +103,7 @@ namespace BadmintonCourtApp
                 return;
             }
             int capacity;
-            if (!int.TryParse(CapacityTextBox.Text, out capacity) || capacity <= 0)
+            if (!int.TryParse(CapacityTextBox.Text, out capacity) || capacity > int.Parse(CapacityTextBlock.Text))
             {
                 MessageBox.Show("Please enter a valid capacity (number of guests).");
                 return;
@@ -143,11 +143,17 @@ namespace BadmintonCourtApp
 
         private int CalculateTotalPrice( List<ItemsViewModel> selectedItems)
         {
+            int capacity;
+            if (!int.TryParse(CapacityTextBox.Text, out capacity) || capacity > int.Parse(CapacityTextBlock.Text))
+            {
+                MessageBox.Show("Please enter a valid capacity (number of guests).");
+                return 0;
+            }
             int totalPrice = _court.Price ?? 0;
             if (selectedItems.IsNullOrEmpty()) return 0;
             foreach (var item in selectedItems)
             {
-                totalPrice += item.Price;
+                totalPrice += item.Price*capacity;
             }
             return totalPrice;
         }

@@ -21,10 +21,6 @@ public partial class Booking
 
     public string Status { get; set; }
 
-    public string BookingItemsNames => string.Join(", ", BookingItems.Select(bi => bi.Item.Name));
-    public string BookingSlotsDates => string.Join(", ", BookingSlots.Select(bs => bs.BookDate));
-    public string BookingSlotsTimes => string.Join(", ", BookingSlots.Select(bs => bs.Vst.TimeSlot.Value));
-
     public virtual ICollection<BookingItem> BookingItems { get; set; } = new List<BookingItem>();
 
     public virtual ICollection<BookingSlot> BookingSlots { get; set; } = new List<BookingSlot>();
