@@ -5,19 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BadmintonCourtApp.AdminViews.Popup"
         mc:Ignorable="d"
-        Title="AddCourtWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="Add_Button" Content="Add" HorizontalAlignment="Left" Margin="549,389,0,0" VerticalAlignment="Top" Height="32" Width="76" Click="Add_Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,70,0,0" TextWrapping="Wrap" Text="Location" FontSize="15" VerticalAlignment="Top"/>
-        <ComboBox x:Name="LocationComboBox" HorizontalAlignment="Left" Margin="180,68,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,122,0,0" TextWrapping="Wrap" Text="Court Name" FontSize="15" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,170,0,0" TextWrapping="Wrap" Text="Capacity" FontSize="15" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,213,0,0" TextWrapping="Wrap" Text="Description" FontSize="15" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="46,282,0,0" TextWrapping="Wrap" Text="Price" FontSize="15" VerticalAlignment="Top"/>
-        <TextBox x:Name="NewCourtName" HorizontalAlignment="Left" Margin="180,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="NewCapacity" HorizontalAlignment="Left" Margin="180,172,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="NewDescription" HorizontalAlignment="Left" Margin="180,214,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="54"/>
-        <TextBox x:Name="NewPrice" HorizontalAlignment="Left" Margin="180,284,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        Title="AddCourtWindow" Height="516" Width="800">
+    <Grid Margin="0,0,0,10">
+        <TextBlock HorizontalAlignment="Left" Margin="46,20,0,0" TextWrapping="Wrap" Text="Add New Court" FontSize="20" FontWeight="Bold" VerticalAlignment="Top"/>
 
+        <TextBlock HorizontalAlignment="Left" Margin="46,70,0,0" TextWrapping="Wrap" Text="Location" FontSize="15" VerticalAlignment="Top"/>
+        <ComboBox x:Name="LocationComboBox" HorizontalAlignment="Left" Margin="180,68,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="ComboBox_SelectionChanged"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="46,122,0,0" TextWrapping="Wrap" Text="Court Name" FontSize="15" VerticalAlignment="Top"/>
+        <TextBox x:Name="NewCourtName" HorizontalAlignment="Left" Margin="180,124,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="46,170,0,0" TextWrapping="Wrap" Text="Capacity" FontSize="15" VerticalAlignment="Top"/>
+        <TextBox x:Name="NewCapacity" HorizontalAlignment="Left" Margin="180,172,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="46,213,0,0" TextWrapping="Wrap" Text="Description" FontSize="15" VerticalAlignment="Top"/>
+        <TextBox x:Name="NewDescription" HorizontalAlignment="Left" Margin="180,214,0,0" VerticalAlignment="Top" Width="200" Height="80" TextWrapping="Wrap"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="46,310,0,0" TextWrapping="Wrap" Text="Price" FontSize="15" VerticalAlignment="Top"/>
+        <TextBox x:Name="NewPrice" HorizontalAlignment="Left" Margin="180,312,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="46,370,0,0" TextWrapping="Wrap" Text="Select Timeslots:" FontSize="15" VerticalAlignment="Top"/>
+        <ListBox x:Name="TimeslotListBox" HorizontalAlignment="Left" Margin="180,370,0,0" VerticalAlignment="Top" Width="200" Height="100" SelectionMode="Multiple">
+            <ListBoxItem Content="Morning"/>
+            <ListBoxItem Content="Afternoon"/>
+            <ListBoxItem Content="Evening"/>
+            <ListBoxItem Content="Night"/>
+        </ListBox>
+
+        <Button x:Name="Add_Button" Content="Add" HorizontalAlignment="Left" Margin="549,439,0,0" VerticalAlignment="Top" Height="32" Width="76" Click="Add_Button_Click"/>
     </Grid>
 </Window>

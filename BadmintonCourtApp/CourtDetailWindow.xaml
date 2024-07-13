@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="Court Details" Height="600" Width="800" Background="#FFFEFBFB">
+        Title="Court Details" Height="626" Width="800" Background="#FFFEFBFB">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -34,9 +34,18 @@
             <ComboBox Name="TimeslotListBox" Margin="0,0,0,20" DisplayMemberPath="value"/>
 
             <TextBlock Text="Services:" FontWeight="Bold"/>
-            <ListBox x:Name="ServicesListBox" SelectionMode="Multiple" DisplayMemberPath="Name" Margin="0,0,0,20"/>
+            <ListBox x:Name="ServicesListBox" SelectionMode="Multiple" DisplayMemberPath="Name" Margin="0,0,0,20" SelectionChanged="ServicesListBox_SelectionChanged"/>
+
+            <!-- Capacity Input -->
+            <TextBlock Text="Capacity:" FontWeight="Bold"/>
+            <TextBox x:Name="CapacityTextBox" Width="200" Margin="0,0,0,20"/>
+
+            <!-- Note Input -->
+            <TextBlock Text="Note:" FontWeight="Bold"/>
+            <TextBox x:Name="NoteTextBox" Width="200" Height="100" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="0,0,0,20"/>
 
             <Button Content="Book Court" Style="{StaticResource MaterialDesignRaisedButton}" Margin="0,20,0,0" HorizontalAlignment="Center" Click="BookCourtButton_Click"/>
         </StackPanel>
+
     </Grid>
 </Window>

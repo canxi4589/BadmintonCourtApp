@@ -60,7 +60,7 @@ namespace BadmintonCourtApp.AdminViews.Pages
             userRepository = userRepo;
             courtRepository = courtRepo;
 
-            UpcomingBooks.ItemsSource = bookRepo.GetAllBookinInfoLiterally().Where(x => x.Status == null).OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
+            UpcomingBooks.ItemsSource = bookRepo.GetAllBookinInfoLiterally().Where(x => x.Status == "Booked").OrderBy(x => x.BookingSlots.First().BookDate).Reverse();
 
             SearchCourtInput.ItemsSource = courtRepo.GetAll().Select(x => x.CourtName);
 

@@ -24,10 +24,12 @@ namespace BadmintonCourtApp.AdminViews.Popup
         private CourtRepository courtRepository;
         private LocationRepository locationRepository;
         private BadmintonCourt badmintonCourt;
+        private TimeSlotRepository bookingRepository;
         public AddCourtWindow(CourtRepository courtRepository)
         {
             this.courtRepository = courtRepository;
-            this.locationRepository = locationRepository;
+            this.locationRepository = new LocationRepository(new DBContext());
+            bookingRepository = new TimeSlotRepository(new DBContext());
             InitializeComponent();
             LoadLocationName();
             clear();
@@ -75,14 +77,18 @@ namespace BadmintonCourtApp.AdminViews.Popup
                     Name = c.Name
                 }).ToList();
 
-            LocationComboBox.ItemsSource = locations;
             LocationComboBox.DisplayMemberPath = "Name";
             LocationComboBox.SelectedValuePath = "LocationID";
         }
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
+            var hehe = TimeslotListBox.SelectedItem;
+            var timeslot = bookingRepository.GetAll();
+
+            
             if (int.TryParse(NewCapacity.Text, out int newCapacity) && int.TryParse(NewPrice.Text, out int newPrice))
+
             {
                 if (LocationComboBox.SelectedValue is int selectedLocationID)
                 {

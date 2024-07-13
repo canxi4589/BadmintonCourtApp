@@ -76,7 +76,6 @@ namespace BadmintonCourtApp.AdminViews.Popup
                     Name = c.Name
                 }).ToList();
 
-            LocationComboBox.ItemsSource = locations;
             LocationComboBox.DisplayMemberPath = "Name";
             LocationComboBox.SelectedValuePath = "LocationID";
         }

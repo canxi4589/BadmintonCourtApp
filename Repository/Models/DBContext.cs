@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Repository.Models;
 
@@ -39,18 +38,7 @@ public partial class DBContext : DbContext
     public virtual DbSet<VenueServiceTime> VenueServiceTimes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(GetConnectionString());
-
-    private string GetConnectionString()
-    {
-        IConfiguration config = new ConfigurationBuilder()
-             .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsetting.json", true, true)
-                    .Build();
-        var strConn = config["ConnectionStrings:DBDefault"];
-
-        return strConn;
-    }
+        => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=BadmintonCourtDB;User ID=sa;Password=12345;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
