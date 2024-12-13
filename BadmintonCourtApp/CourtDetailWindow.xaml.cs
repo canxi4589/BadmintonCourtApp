@@ -3,6 +3,11 @@ using Repository.repository;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Media;
+using Brushes = System.Windows.Media.Brushes;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BadmintonCourtApp
 {
@@ -11,17 +16,21 @@ namespace BadmintonCourtApp
         private readonly BadmintonCourt _court;
         private readonly ItemRepository _itemRepository;
         private readonly CourtRepository _courtRepository;
-        private readonly int userid;
+        private readonly int _userId;
+        private int originPrice;
 
-        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository,int userId)
+        public CourtDetailWindow(BadmintonCourt court, ItemRepository itemRepository, CourtRepository courtRepository, int userId)
         {
+            InitializeComponent();
             _itemRepository = itemRepository;
             _courtRepository = courtRepository;
-            InitializeComponent();
+            _userId = userId;
             _court = court;
+
             LoadCourtDetails();
-            LoadItemTypes();
-            userid = userId;
+            originPrice = int.Parse(PriceTextBlock.Text);
+
+            LoadServices();
         }
 
         private void LoadCourtDetails()
@@ -33,41 +42,17 @@ namespace BadmintonCourtApp
             DescriptionTextBlock.Text = _court.Description;
         }
 
-        private void LoadItemTypes()
+        private void LoadServices()
         {
-            var itemTypes = _itemRepository.GetItemsByType()
-                .Select(c => new TypeViewModel
-                {
-                    Id = c.ItemTypeId,
-                    Name = c.Type
-                }).ToList();
-
-            ItemTypeComboBox.ItemsSource = itemTypes;
-            ItemTypeComboBox.DisplayMemberPath = "Name";
-            ItemTypeComboBox.SelectedValuePath = "Id";
-        }
-
-        private void ItemTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (ItemTypeComboBox.SelectedValue is int selectedTypeId)
-            {
-                LoadItems(selectedTypeId);
-            }
-        }
-
-        private void LoadItems(int itemTypeId)
-        {
-            var items = _itemRepository.GetItems(itemTypeId)
+            var items = _itemRepository.GetAllItems()
                 .Select(c => new ItemsViewModel
                 {
                     ItemId = c.ItemId,
                     Name = c.Name,
-                    Price = (int)c.Price // Assuming Item has a Price property
+                    Price = c.Price ?? 0
                 }).ToList();
 
-            ItemsListBox.ItemsSource = items;
-            ItemsListBox.DisplayMemberPath = "Name";
-            ItemsListBox.SelectedValuePath = "ItemId";
+            ServicesListBox.ItemsSource = items;
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -92,66 +77,96 @@ namespace BadmintonCourtApp
 
             TimeslotListBox.ItemsSource = timeSlots;
             TimeslotListBox.DisplayMemberPath = "value";
+            foreach (var timeSlot in timeSlots)
+            {
+                if (timeSlot.IsBooked)
+                {
+                    // Find the ListBoxItem corresponding to this timeslot
+                    var listBoxItem = TimeslotListBox.ItemContainerGenerator.ContainerFromItem(timeSlot) as ListBoxItem;
+                    if (listBoxItem != null)
+                    {
+                        listBoxItem.IsEnabled = false;
+                        listBoxItem.Foreground = Brushes.Gray; // Optionally, change the appearance of booked items
+                    }
+                }
+            }
         }
 
         private void BookCourtButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedTimeslot = TimeslotListBox.SelectedItem as TimeSlotViewModel;
-            var selectedItems = ItemsListBox.SelectedItems.Cast<ItemsViewModel>().ToList();
+            var selectedItems = ServicesListBox.SelectedItems.Cast<ItemsViewModel>().ToList();
 
             if (selectedTimeslot == null || !selectedItems.Any())
             {
                 MessageBox.Show("Please select a timeslot and at least one service item.");
                 return;
             }
-
-
-
-            // Create a new booking
+            int capacity;
+            if (!int.TryParse(CapacityTextBox.Text, out capacity) || capacity > int.Parse(CapacityTextBlock.Text))
+            {
+                MessageBox.Show("Please enter a valid capacity (number of guests).");
+                return;
+            }
             var newBooking = new Booking
             {
-                UserId = userid,
+                UserId = _userId,
                 CourtId = _court.CourtId,
-                NumberOfGuest = 0, // Update this as per your requirements
-                SpecialNote = "",  // Update this as per your requirements
-                TotalPrice = CalculateTotalPrice(selectedTimeslot, selectedItems)
+                Status = "Booked",
+                NumberOfGuest = capacity,
+                SpecialNote = NoteTextBox.Text,
+                TotalPrice = CalculateTotalPrice( selectedItems)
             };
 
-            // Add selected timeslot to the booking
             newBooking.BookingSlots.Add(new BookingSlot
             {
-                Vstid = selectedTimeslot.TimeSlotID
+                Vstid = selectedTimeslot.TimeSlotID,
+                BookDate =DatePicker.SelectedDate.ToDateOnly(),
+
             });
 
-            // Add selected items to the booking
             foreach (var item in selectedItems)
             {
                 newBooking.BookingItems.Add(new BookingItem
                 {
                     ItemId = item.ItemId,
-                    UnitQuantity = 1, // Update this as per your requirements
-                    SumPrice = item.Price // Assuming each item has a Price property
+                    UnitQuantity = 1,
+                    SumPrice = item.Price
                 });
             }
 
-            // Save the booking to the database
             _courtRepository.AddBooking(newBooking);
 
             MessageBox.Show("Court booked successfully!");
+            this.Close();
         }
 
-      
-
-        private int CalculateTotalPrice(TimeSlotViewModel selectedTimeslot, List<ItemsViewModel> selectedItems)
+        private int CalculateTotalPrice( List<ItemsViewModel> selectedItems)
         {
-            int totalPrice = _court.Price ?? 0; // Add court price if applicable
-
+            int capacity;
+            if (!int.TryParse(CapacityTextBox.Text, out capacity) || capacity > int.Parse(CapacityTextBlock.Text))
+            {
+                MessageBox.Show("Please enter a valid capacity (number of guests).");
+                return 0;
+            }
+            int totalPrice = _court.Price ?? 0;
+            if (selectedItems.IsNullOrEmpty()) return 0;
             foreach (var item in selectedItems)
             {
-                totalPrice += item.Price; // Assuming each item has a Price property
+                totalPrice += item.Price*capacity;
             }
-
             return totalPrice;
+        }
+
+        private void ServicesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItems = ServicesListBox.SelectedItems.Cast<ItemsViewModel>().ToList();
+            if (selectedItems.IsNullOrEmpty())
+            {
+                PriceTextBlock.Text = originPrice + "";
+                return;
+            }
+            PriceTextBlock.Text = originPrice + CalculateTotalPrice(selectedItems) + "";
         }
     }
 
@@ -168,12 +183,19 @@ namespace BadmintonCourtApp
     {
         public int ItemId { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; } // Assuming Item has a Price property
+        public int Price { get; set; }
     }
-
-    public class TypeViewModel
+    public static class DateTimeExtends
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public static DateOnly ToDateOnly(this DateTime date)
+        {
+            return new DateOnly(date.Year, date.Month, date.Day);
+        }
+
+        public static DateOnly? ToDateOnly(this DateTime? date)
+        {
+            return date != null ? (DateOnly?)date.Value.ToDateOnly() : null;
+        }
     }
 }
+

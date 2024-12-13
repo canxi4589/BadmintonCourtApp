@@ -28,7 +28,7 @@ namespace Repository.repository
 
         public  User FindByEmail(string email)
         {
-            return  Context.Set<User>().FirstOrDefault(u => u.Gmail == email);
+            return  Context.Users.FirstOrDefault(u => u.Gmail == email);
         }
 
         public void UpdatePassword(User user, string newPassword)

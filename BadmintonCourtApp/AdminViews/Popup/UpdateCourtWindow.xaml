@@ -1,0 +1,69 @@
+﻿<Window x:Class="BadmintonCourtApp.AdminViews.Popup.UpdateCourtWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BadmintonCourtApp.AdminViews.Popup"
+        mc:Ignorable="d"
+        Title="UpdateCourtWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="147,39,0,0" TextWrapping="Wrap" Text="Current Court" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="548,39,0,0" TextWrapping="Wrap" Text="New Court" VerticalAlignment="Top"/>
+        <Border Margin="399,39,400,35" CornerRadius="15" BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="36,108,0,0" TextWrapping="Wrap" Text="CourtID" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,156,0,0" TextWrapping="Wrap" Text="Location" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,202,0,0" TextWrapping="Wrap" Text="Court Name" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,250,0,0" TextWrapping="Wrap" Text="Capacity" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,293,0,0" TextWrapping="Wrap" Text="Description" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,362,0,0" TextWrapping="Wrap" Text="Price" FontSize="15" VerticalAlignment="Top"/>
+        <Border Margin="119,116,680,86" CornerRadius="15" BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <TextBlock x:Name="CourtID1" HorizontalAlignment="Left" Margin="170,108,0,0" TextWrapping="Wrap" Text="CourtID" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OldLocation" HorizontalAlignment="Left" Margin="170,156,0,0" TextWrapping="Wrap" Text="Location" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OldCourtName" HorizontalAlignment="Left" Margin="170,202,0,0" TextWrapping="Wrap" Text="Court Name" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OldCapacity" HorizontalAlignment="Left" Margin="170,250,0,0" TextWrapping="Wrap" Text="Capacity" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OldDescription" HorizontalAlignment="Left" Margin="170,293,0,0" TextWrapping="Wrap" Text="Description" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock x:Name="OldPrice" HorizontalAlignment="Left" Margin="170,362,0,0" TextWrapping="Wrap" Text="Price" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="445,108,0,0" TextWrapping="Wrap" Text="CourtID" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="445,156,0,0" TextWrapping="Wrap" Text="Location" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="445,202,0,0" TextWrapping="Wrap" Text="Court Name" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="445,250,0,0" TextWrapping="Wrap" Text="Capacity" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="445,293,0,0" TextWrapping="Wrap" Text="Description" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="445,362,0,0" TextWrapping="Wrap" Text="Price" FontSize="15" VerticalAlignment="Top"/>
+        <Border Margin="528,116,271,86" CornerRadius="15" BorderThickness="3" BorderBrush="Black" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <TextBlock x:Name="CourtID1_Copy" HorizontalAlignment="Left" Margin="579,108,0,0" TextWrapping="Wrap" Text="CourtID" FontSize="15" VerticalAlignment="Top"/>
+        <ComboBox x:Name="LocationComboBox" HorizontalAlignment="Left" Margin="579,156,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button x:Name="Save_Button" Content="Save" HorizontalAlignment="Left" Margin="709,406,0,0" VerticalAlignment="Top" Height="34" Width="81" Click="Save_Button_Click"/>
+        <TextBox x:Name="NewCourtName" HorizontalAlignment="Left" Margin="579,204,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NewCapacity" HorizontalAlignment="Left" Margin="579,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NewDescription" HorizontalAlignment="Left" Margin="579,294,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="54"/>
+        <TextBox x:Name="NewPrice" HorizontalAlignment="Left" Margin="579,364,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

@@ -1,4 +1,5 @@
-﻿using Repository.Models;
+﻿using BadmintonCourtApp.AdminViews;
+using Repository.Models;
 using Repository.repository;
 using System.Text;
 using System.Windows;
@@ -34,7 +35,10 @@ namespace BadmintonCourtApp
         {
             string username = UsernameTextBox.Text;
             string password = PasswordBox.Password;
-
+            if(username == null || password == null)
+            {
+                MessageBox.Show("Invalid username or password. Please try again!");
+            }
             // Placeholder for login authentication logic
             if (_userRepository.Login(username, password)!=null)
             {
@@ -48,9 +52,18 @@ namespace BadmintonCourtApp
                     this.Close();
                     customerHomeScreen.ShowDialog();
                 }
+                else if (u.Role == "Admin")
+                {
+                    AdminWindow adminWindow = new AdminWindow();
+                    this.Close();
+                    adminWindow.ShowDialog();
+                }
+
                 else
                 {
-                    //plaplapla
+                    AdminViews.AdminWindow adminWindow = new AdminViews.AdminWindow();
+                    this.Close();
+                    adminWindow.ShowDialog();
                 }
                 // Navigate to appropriate home screen based on user role
                 // Example: if (userRole == "Admin") { Open Admin Home Screen }
@@ -58,14 +71,14 @@ namespace BadmintonCourtApp
             }
             else
             {
-                ErrorMessageTextBlock.Text = "Invalid username or password. Please try again.";
+                //"Invalid username or password. Please try again."
+                MessageBox.Show("Invalid username or password. Please try again!"); 
             }
         }
 
         private void ForgotPasswordLink_Click(object sender, RoutedEventArgs e)
         {
             forgotPasswordWindow forgotPasswordWindow = new forgotPasswordWindow(_userRepository);
-            this.Close();
 
             forgotPasswordWindow.ShowDialog();
             MessageBox.Show("Redirect to forgot password page or functionality.");
@@ -74,6 +87,7 @@ namespace BadmintonCourtApp
         {
             registerWindow registerWindow = new registerWindow(_userRepository);
             registerWindow.ShowDialog();
+            Close();
 
 
         }

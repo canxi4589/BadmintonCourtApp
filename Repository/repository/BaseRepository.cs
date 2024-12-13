@@ -59,7 +59,7 @@ namespace Repository.repository
         public void Update(T entity)
         {
             Context.Set<T>().Update(entity);
-             Context.SaveChangesAsync();
+             Context.SaveChanges();
         }
     }
 }

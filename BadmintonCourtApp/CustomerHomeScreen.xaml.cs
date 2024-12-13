@@ -24,12 +24,14 @@ namespace BadmintonCourtApp
         private readonly CourtRepository _courtRepository;
         private readonly ItemRepository _itemRepository;
         private readonly BookingRepository _bookingRepository;
+        private readonly UserRepository _userRepository;
         private List<BadmintonCourt> allCourts;
         private readonly int uid;
 
         public CustomerHomeScreen(CourtRepository r, ItemRepository itemRepository,int id)
         {
             InitializeComponent();
+            _userRepository = new UserRepository(new DBContext());
             _courtRepository = r;
             loadData();
             _itemRepository = itemRepository;
@@ -38,14 +40,30 @@ namespace BadmintonCourtApp
         }
         private void loadData()
         {
-            var courts = _courtRepository.GetAll();
+            var courts = _courtRepository.getAll();
             CourtDataGrid.ItemsSource = courts;
             allCourts = courts.ToList();
         }
 
         private void ApplyFiltersButton_Click(object sender, RoutedEventArgs e)
         {
-                
+            int.TryParse(MinPriceFilter.Text, out int minPrice);
+            int.TryParse(MaxPriceFilter.Text, out int maxPrice);
+            string timeAvailable = (TimeFilter.SelectedItem as ComboBoxItem)?.Content as string;
+
+            var filteredCourts = allCourts.Where(court =>
+                (minPrice == 0 || court.Price >= minPrice) &&
+                (maxPrice == 0 || court.Price <= maxPrice) &&
+                (string.IsNullOrEmpty(timeAvailable) || MatchesTimeAvailable(court, timeAvailable))
+            ).ToList();
+
+            CourtDataGrid.ItemsSource = filteredCourts;
+        }
+
+        private bool MatchesTimeAvailable(BadmintonCourt court, string timeAvailable)
+        {
+            var availableTimeSlots = _courtRepository.getAllV(court.CourtId);
+            return availableTimeSlots.Any(ts => _courtRepository.GetTimeSlotById((int)ts.TimeSlotId).Name.Equals(timeAvailable, StringComparison.OrdinalIgnoreCase));
         }
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -60,6 +78,7 @@ namespace BadmintonCourtApp
             {
                 var courtDetailWindow = new CourtDetailWindow(selectedCourt,_itemRepository,_courtRepository,uid);
                 courtDetailWindow.ShowDialog();
+               
             }
         }
 
@@ -67,6 +86,12 @@ namespace BadmintonCourtApp
         {
             BookingHistory bookingHistory = new BookingHistory(_bookingRepository,_courtRepository,_itemRepository);
             bookingHistory.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            profileForm profileForm = new profileForm(_userRepository,uid);
+            profileForm.ShowDialog();
         }
     }
 }

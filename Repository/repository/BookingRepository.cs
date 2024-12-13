@@ -14,12 +14,29 @@ namespace Repository.repository
         public BookingRepository(DBContext context) : base(context)
         {
             _context = context;
-
         }
         public IEnumerable<Booking> GetBookingsByUserId(int userId)
         {
-            return Context.Bookings.Include(b => b.Court) // Include the related Court data
-                .Where(b => b.UserId == userId)
+            return _context.Bookings
+        .Include(b => b.Court) // Include the related Court data
+        .Include(b => b.BookingItems) // Include the related BookingItems
+        .ThenInclude(bi => bi.Item) // Include the related Item for each BookingItem
+        .Include(b => b.BookingSlots) // Include the related BookingSlots
+        .ThenInclude(bs => bs.Vst)
+        .ThenInclude(bts => bts.TimeSlot)
+        .Where(b => b.UserId == userId)
+        .ToList();
+        }
+
+        public IEnumerable<Booking> GetAllBookinInfoLiterally()
+        {
+            // This shit just so bad.
+            return Context.Bookings
+                .Include(x => x.Court)
+                .Include(x => x.BookingSlots)
+                .ThenInclude(y => y.Vst)
+                .ThenInclude(z => z.TimeSlot)
+                .Include(a => a.User)
                 .ToList();
         }
     }

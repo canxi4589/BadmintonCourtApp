@@ -35,7 +35,7 @@ namespace BadmintonCourtApp
             string email = EmailTextBox.Text;
             string name = NameTextBox.Text;
             string phoneNumber = PhoneNumberTextBox.Text;
-            string password = PasswordBox.Text;
+            string password = PasswordBox.Password;
 
             if (string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(email) ||

@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "DBDefault": "Data Source=localhost;Initial Catalog=BadmintonCourtDB;User ID=sa;Password=12345;Trust Server Certificate=True"
+    "DBDefault": "Data Source=localhost;Initial Catalog=BadmintonCourtDB;User ID=sa;Password=12345;Encrypt=True;Trust Server Certificate=True"
   }
 }
